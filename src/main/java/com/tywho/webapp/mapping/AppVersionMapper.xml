@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tywho.webapp.dao.AppVersionMapper" >
+  <resultMap id="BaseResultMap" type="com.tywho.webapp.pojo.AppVersion" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="apptype" property="apptype" jdbcType="INTEGER" />
+    <result column="clienttype" property="clienttype" jdbcType="VARCHAR" />
+    <result column="appversion" property="appversion" jdbcType="VARCHAR" />
+    <result column="funcdesc" property="funcdesc" jdbcType="VARCHAR" />
+    <result column="forceupdate" property="forceupdate" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="packageurl" property="packageurl" jdbcType="VARCHAR" />
+    <result column="hashvalue" property="hashvalue" jdbcType="VARCHAR" />
+    <result column="tipnum" property="tipnum" jdbcType="INTEGER" />
+    <result column="channel" property="channel" jdbcType="VARCHAR" />
+    <result column="releasetime" property="releasetime" jdbcType="TIMESTAMP" />
+    <result column="offlinetime" property="offlinetime" jdbcType="TIMESTAMP" />
+    <result column="ctime" property="ctime" jdbcType="TIMESTAMP" />
+    <result column="mtime" property="mtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, apptype, clienttype, appversion, funcdesc, forceupdate, status, packageurl, hashvalue, 
+    tipnum, channel, releasetime, offlinetime, ctime, mtime
+  </sql>
+  <insert id="insertSelective" parameterType="com.tywho.webapp.pojo.AppVersion" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into app_version
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="apptype != null" >
+        apptype,
+      </if>
+      <if test="clienttype != null" >
+        clienttype,
+      </if>
+      <if test="appversion != null" >
+        appversion,
+      </if>
+      <if test="funcdesc != null" >
+        funcdesc,
+      </if>
+      <if test="forceupdate != null" >
+        forceupdate,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="packageurl != null" >
+        packageurl,
+      </if>
+      <if test="hashvalue != null" >
+        hashvalue,
+      </if>
+      <if test="tipnum != null" >
+        tipnum,
+      </if>
+      <if test="channel != null" >
+        channel,
+      </if>
+      <if test="releasetime != null" >
+        releasetime,
+      </if>
+      <if test="offlinetime != null" >
+        offlinetime,
+      </if>
+      <if test="ctime != null" >
+        ctime,
+      </if>
+      <if test="mtime != null" >
+        mtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="apptype != null" >
+        #{apptype,jdbcType=INTEGER},
+      </if>
+      <if test="clienttype != null" >
+        #{clienttype,jdbcType=VARCHAR},
+      </if>
+      <if test="appversion != null" >
+        #{appversion,jdbcType=VARCHAR},
+      </if>
+      <if test="funcdesc != null" >
+        #{funcdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="forceupdate != null" >
+        #{forceupdate,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="packageurl != null" >
+        #{packageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="hashvalue != null" >
+        #{hashvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="tipnum != null" >
+        #{tipnum,jdbcType=INTEGER},
+      </if>
+      <if test="channel != null" >
+        #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="releasetime != null" >
+        #{releasetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="offlinetime != null" >
+        #{offlinetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ctime != null" >
+        #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mtime != null" >
+        #{mtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tywho.webapp.pojo.AppVersion" >
+    update app_version
+    <set >
+      <if test="apptype != null" >
+        apptype = #{apptype,jdbcType=INTEGER},
+      </if>
+      <if test="clienttype != null" >
+        clienttype = #{clienttype,jdbcType=VARCHAR},
+      </if>
+      <if test="appversion != null" >
+        appversion = #{appversion,jdbcType=VARCHAR},
+      </if>
+      <if test="funcdesc != null" >
+        funcdesc = #{funcdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="forceupdate != null" >
+        forceupdate = #{forceupdate,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="packageurl != null" >
+        packageurl = #{packageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="hashvalue != null" >
+        hashvalue = #{hashvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="tipnum != null" >
+        tipnum = #{tipnum,jdbcType=INTEGER},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="releasetime != null" >
+        releasetime = #{releasetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="offlinetime != null" >
+        offlinetime = #{offlinetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ctime != null" >
+        ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mtime != null" >
+        mtime = #{mtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
